@@ -354,6 +354,7 @@ public class AudioService extends MediaBrowserServiceCompat {
             return;
         } else {
             Log.d("MainActivity", "FLUTTER ENGINE FOUND");
+            val channel= MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "intent");
         }
 }
 catch(Exception e) {
