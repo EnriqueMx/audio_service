@@ -345,7 +345,9 @@ public class AudioService extends MediaBrowserServiceCompat {
                 // number of items.
                 return bitmap.getByteCount() / 1024;
             }
-        };try {
+        };
+        
+        /*try {
   flutterEngine = AudioServicePlugin.getFlutterEngine(this); // be sure to call this
 
 
@@ -359,7 +361,7 @@ public class AudioService extends MediaBrowserServiceCompat {
 }
 catch(Exception e) {
   Log.d("MainActivity", "FLUTTER ENGINE ERROR FOUND");
-}
+}*/
 
         
 
