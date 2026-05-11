@@ -346,21 +346,21 @@ public class AudioService extends MediaBrowserServiceCompat {
                 return bitmap.getByteCount() / 1024;
             }
         };
-        Log.d("MainService", "DEBUG OnCreate");
+        
         try {
   flutterEngine = AudioServicePlugin.getFlutterEngine(this); // be sure to call this
 
 
         if (flutterEngine == null) {
-            Log.e("MainActivity", "NO FLUTTER ENGINE FOUND");
+            
             return;
         } else {
-            Log.d("MainActivity", "FLUTTER ENGINE FOUND");
-            val channel= MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "intent");
+           
+           // val channel= MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "intent");
         }
 }
 catch(Exception e) {
-  Log.d("MainActivity", "FLUTTER ENGINE ERROR FOUND");
+  //Log.d("MainActivity", "FLUTTER ENGINE ERROR FOUND");
 }
 
         
@@ -370,7 +370,7 @@ catch(Exception e) {
     @Override
     public int onStartCommand(final Intent intent, int flags, int startId) {
         MediaButtonReceiver.handleIntent(mediaSession, intent);
-        Log.d("DEBUG MainService", "onStartCommand");
+        //Log.d("DEBUG MainService", "onStartCommand");
 
         return START_NOT_STICKY;
     }
@@ -387,7 +387,7 @@ catch(Exception e) {
             listener.onDestroy();
             listener = null;
         }
-         Log.d("DEBUG MainService", "onDestroy");
+         //Log.d("DEBUG MainService", "onDestroy");
         mediaMetadata = null;
         artBitmap = null;
         queue.clear();
