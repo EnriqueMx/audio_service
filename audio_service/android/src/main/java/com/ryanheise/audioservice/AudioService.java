@@ -45,7 +45,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+import android.util.Log;
 import io.flutter.embedding.engine.FlutterEngine;
 
 public class AudioService extends MediaBrowserServiceCompat {
@@ -347,21 +347,21 @@ public class AudioService extends MediaBrowserServiceCompat {
                 return bitmap.getByteCount() / 1024;
             }
         };
-        
+        Log.d("DEBUG MainActivity", "OnCreate");
         try {
   flutterEngine = AudioServicePlugin.getFlutterEngine(this); // be sure to call this
 
 
         if (flutterEngine == null) {
-            
+            Log.d("DEBUG MainActivity", "FLUTTER ENGINE not FOUND");
             return;
         } else {
-           
+           Log.d("DEBUG MainActivity", "FLUTTER ENGINE  FOUND");
            // val channel= MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "intent");
         }
 }
 catch(Exception e) {
-  //Log.d("MainActivity", "FLUTTER ENGINE ERROR FOUND");
+  Log.d("MainActivity", "FLUTTER ENGINE ERROR FOUND");
 }
 
         
