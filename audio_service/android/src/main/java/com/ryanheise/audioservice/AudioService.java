@@ -371,6 +371,7 @@ catch(Exception e) {
     public int onStartCommand(final Intent intent, int flags, int startId) {
         MediaButtonReceiver.handleIntent(mediaSession, intent);
         Log.d("DEBUG MainService", "onStartCommand");
+
         return START_NOT_STICKY;
     }
 
@@ -394,7 +395,7 @@ catch(Exception e) {
         controls.clear();
         artBitmapCache.evictAll();
         compactActionIndices = null;
-        releaseMediaSession();
+        //releaseMediaSession();   AQUI FUI YO
         ServiceCompat.stopForeground(this, config.androidResumeOnClick ? STOP_FOREGROUND_DETACH : STOP_FOREGROUND_REMOVE);
         // This still does not solve the Android 11 problem.
         // if (notificationCreated) {
