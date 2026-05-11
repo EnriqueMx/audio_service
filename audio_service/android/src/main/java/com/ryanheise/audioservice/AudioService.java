@@ -281,7 +281,7 @@ public class AudioService extends MediaBrowserServiceCompat {
     private AudioProcessingState processingState = AudioProcessingState.idle;
     private int repeatMode;
     private int shuffleMode;
-    private boolean notificationCreated;
+    private boolean notificatid;
     private final Handler handler = new Handler(Looper.getMainLooper());
     private VolumeProviderCompat volumeProvider;
 
@@ -304,15 +304,7 @@ public class AudioService extends MediaBrowserServiceCompat {
     @Override
     public void onCreate() {
         super.onCreate();
-        flutterEngine = AudioServicePlugin.getFlutterEngine(this); // be sure to call this
-
-
-        if (flutterEngine == null) {
-            Log.e("MainActivity", "NO FLUTTER ENGINE FOUND");
-            return;
-        } else {
-            Log.d("MainActivity", "FLUTTER ENGINE FOUND");
-        }
+        
         instance = this;
         repeatMode = 0;
         shuffleMode = 0;
@@ -353,7 +345,22 @@ public class AudioService extends MediaBrowserServiceCompat {
                 // number of items.
                 return bitmap.getByteCount() / 1024;
             }
-        };
+        };try {
+  flutterEngine = AudioServicePlugin.getFlutterEngine(this); // be sure to call this
+
+
+        if (flutterEngine == null) {
+            Log.e("MainActivity", "NO FLUTTER ENGINE FOUND");
+            return;
+        } else {
+            Log.d("MainActivity", "FLUTTER ENGINE FOUND");
+        }
+}
+catch(Exception e) {
+  Log.d("MainActivity", "FLUTTER ENGINE ERROR FOUND");
+}
+
+        
 
     }
 
