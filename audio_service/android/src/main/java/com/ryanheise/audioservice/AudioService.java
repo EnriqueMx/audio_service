@@ -347,7 +347,7 @@ public class AudioService extends MediaBrowserServiceCompat {
             }
         };
         Log.d("MainService", "DEBUG OnCreate");
-        /*try {
+        try {
   flutterEngine = AudioServicePlugin.getFlutterEngine(this); // be sure to call this
 
 
@@ -361,7 +361,7 @@ public class AudioService extends MediaBrowserServiceCompat {
 }
 catch(Exception e) {
   Log.d("MainActivity", "FLUTTER ENGINE ERROR FOUND");
-}*/
+}
 
         
 
