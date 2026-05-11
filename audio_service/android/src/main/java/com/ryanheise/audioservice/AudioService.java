@@ -304,12 +304,25 @@ public class AudioService extends MediaBrowserServiceCompat {
     @Override
     public void onCreate() {
         super.onCreate();
+        flutterEngine = AudioServicePlugin.getFlutterEngine(this); // be sure to call this
+
+
+        if (flutterEngine == null) {
+            Log.e("MainActivity", "NO FLUTTER ENGINE FOUND");
+            return;
+        } else {
+            Log.d("MainActivity", "FLUTTER ENGINE FOUND");
+        }
         instance = this;
         repeatMode = 0;
         shuffleMode = 0;
         notificationCreated = false;
         playing = false;
         processingState = AudioProcessingState.idle;
+
+
+
+        
         mediaSession = new MediaSessionCompat(this, "media-session");
 
         configure(new AudioServiceConfig(getApplicationContext()));
