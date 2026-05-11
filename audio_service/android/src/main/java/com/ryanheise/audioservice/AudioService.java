@@ -395,7 +395,7 @@ catch(Exception e) {
         controls.clear();
         artBitmapCache.evictAll();
         compactActionIndices = null;
-        //releaseMediaSession();   AQUI FUI YO
+        releaseMediaSession(); 
         ServiceCompat.stopForeground(this, config.androidResumeOnClick ? STOP_FOREGROUND_DETACH : STOP_FOREGROUND_REMOVE);
         // This still does not solve the Android 11 problem.
         // if (notificationCreated) {
