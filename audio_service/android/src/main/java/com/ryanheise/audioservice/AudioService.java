@@ -346,7 +346,7 @@ public class AudioService extends MediaBrowserServiceCompat {
                 return bitmap.getByteCount() / 1024;
             }
         };
-        
+        Log.d("MainService", "DEBUG OnCreate");
         /*try {
   flutterEngine = AudioServicePlugin.getFlutterEngine(this); // be sure to call this
 
@@ -370,6 +370,7 @@ catch(Exception e) {
     @Override
     public int onStartCommand(final Intent intent, int flags, int startId) {
         MediaButtonReceiver.handleIntent(mediaSession, intent);
+        Log.d("DEBUG MainService", "onStartCommand");
         return START_NOT_STICKY;
     }
 
@@ -385,6 +386,7 @@ catch(Exception e) {
             listener.onDestroy();
             listener = null;
         }
+         Log.d("DEBUG MainService", "onDestroy");
         mediaMetadata = null;
         artBitmap = null;
         queue.clear();
