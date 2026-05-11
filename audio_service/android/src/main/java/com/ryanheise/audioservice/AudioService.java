@@ -281,6 +281,7 @@ public class AudioService extends MediaBrowserServiceCompat {
     private AudioProcessingState processingState = AudioProcessingState.idle;
     private int repeatMode;
     private int shuffleMode;
+     private boolean notificationCreated;
     private boolean notificatid;
     private final Handler handler = new Handler(Looper.getMainLooper());
     private VolumeProviderCompat volumeProvider;
