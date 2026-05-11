@@ -371,7 +371,7 @@ catch(Exception e) {
     @Override
     public int onStartCommand(final Intent intent, int flags, int startId) {
         MediaButtonReceiver.handleIntent(mediaSession, intent);
-        //Log.d("DEBUG MainService", "onStartCommand");
+        Log.d("DEBUG MainService", "onStartCommand");
 
         return START_NOT_STICKY;
     }
@@ -384,6 +384,7 @@ catch(Exception e) {
     @Override
     public void onDestroy() {
         super.onDestroy();
+        Log.d("DEBUG MainService", "onDestroy");
         if (listener != null) {
             listener.onDestroy();
             listener = null;
